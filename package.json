@@ -1,0 +1,23 @@
+{
+  "type": "module",
+  "name": "pagerduty-icinga2-middleware",
+  "version": "1.0.0",
+  "description": "An endpoint to forward acknowledgement/unacknowledgment to icinga2.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sxravan/pagerduty-icinga2-middleware.git"
+  },
+  "author": "Shravan Dwarka",
+  "license": "ISC",
+  "dependencies": {
+    "@pagerduty/pdjs": "^2.2.4",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.20.0"
+  }
+}

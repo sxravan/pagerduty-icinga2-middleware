@@ -1,0 +1,15 @@
+[Unit]
+Description=Allow Ack'ing and Unack'ing Icinga2 Alerts
+After=network.target
+
+[Service]
+Type=simple
+User=nagios
+Group=nagios
+SyslogIdentifier=pagerduty-icinga2-middleware
+WorkingDirectory=/opt/pagerduty-icinga2-middleware
+ExecStart=node index.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
