@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Author:   Shravan Dwarka
 # Date:     2024-09-12
-# Purpose:  Git pull, restart pd-icinga-integration.service
+# Purpose:  Git pull, restart pd-icinga2-middleware.service
 #           To run with user nagios
 
 help() {
@@ -42,10 +42,10 @@ while true; do
     esac
 done
 
-pushd /opt/pagerduty-icinga-integration > /dev/null
+pushd /opt/pagerduty-icinga2-middleware > /dev/null
 sudo -u nagios bash -c "git stash; git stash drop; git pull"
 popd > /dev/null
 
 if [[ "$RESTART" -eq 1 ]]; then
-    sudo systemctl restart pd-icinga-integration.service
+    sudo systemctl restart pd-icinga2-middleware.service
 fi
